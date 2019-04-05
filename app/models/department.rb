@@ -9,4 +9,5 @@
 #
 
 class Department < ApplicationRecord
+    has_many :courses, :class_name => "Course", :foreign_key => "department_id"
 end

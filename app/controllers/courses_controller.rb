@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  
   def index
     @courses = Course.all
 
@@ -19,7 +20,8 @@ class CoursesController < ApplicationController
     @course = Course.new
 
     @course.title = params.fetch("title")
-
+    @course.department_id = params.fetch("department_id")
+    
     if @course.valid?
       @course.save
 
@@ -39,6 +41,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params.fetch("id_to_modify"))
 
     @course.title = params.fetch("title")
+    @course.department_id = params.fetch("department_id")
 
     if @course.valid?
       @course.save
@@ -56,4 +59,5 @@ class CoursesController < ApplicationController
 
     redirect_to("/courses", :notice => "Course deleted successfully.")
   end
+  
 end

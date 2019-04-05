@@ -19,6 +19,10 @@
     </th>
 
     <th>
+       Department
+    </th>
+    
+    <th>
     </th>
   </tr>
 
@@ -28,10 +32,14 @@
       <%= course.id %>
     </td>
 
-    <td>
+    <td> 
       <%= course.title %>
     </td>
 
+    <td>
+      <a href="/departments/<%=course.department_id %>"><%= course.department.name %></a>
+    </td>
+    
     <td>
       <a href="/courses/<%= course.id %>">
         Show details
